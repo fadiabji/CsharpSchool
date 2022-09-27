@@ -3,20 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Console;
+using System.ComponentModel.DataAnnotations;
 
 namespace oopAssignment2.Classes
 {
-    internal class Student
+    internal class Student : Person
     {
-        [primerKey]
+        [Key]
         public int StudentId { get; set; }
-        public string Firstname { get; set; }
-        public string Lastname { get; set; }
-        public DateTime DateOfBirth { get; set; }
 
-        public Student(string fname, string lname, DateTime dateOfBirth)
+
+        public Student() :base()
         {
+        }
 
+        public Student(string fname, string lname, DateTime dateOfBirth) : base(fname, lname, dateOfBirth)
+        {
+            Firstname = fname;
+            Lastname = lname;
+            DateOfBirth = dateOfBirth;
         }
 
         public override string ToString()
@@ -24,11 +30,12 @@ namespace oopAssignment2.Classes
             return "First Name : " + Firstname + "|| Last Name : " + Lastname + "\nDate Of Birth : " + DateOfBirth + "|| Student Id: " + StudentId.ToString();
         }
 
-        public void GetAge()
+        public int GetAge()
         {
-            
+            DateTime tody = DateTime.Today;
+            var age = tody.Subtract(DateOfBirth);
+            return age.Days / 365;
         }
-
 
     }
 }

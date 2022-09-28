@@ -16,11 +16,12 @@ namespace oopAssignment2.Classes
         {
         }
 
-        public Person(string fname, string lname, DateTime dateOfBirth) 
+        public Person(string fname, string lname, string dateOfBirth) 
         {
             Firstname = fname;
             Lastname = lname;
-            DateOfBirth = dateOfBirth;
+            // adding time as string in this way "1983-08-22"
+            DateOfBirth = DateTime.Parse(dateOfBirth) ;
         }
     }
 }

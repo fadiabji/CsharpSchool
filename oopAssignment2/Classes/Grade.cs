@@ -22,6 +22,10 @@ namespace oopAssignment2.Classes
 
         public enum GradeType { A, B, C, D, E, F }
 
+        public Grade()
+        {
+
+        }
         public override string ToString()
         {
             switch (GradeResult)

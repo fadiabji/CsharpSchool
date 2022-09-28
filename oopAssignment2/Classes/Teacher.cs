@@ -17,16 +17,17 @@ namespace oopAssignment2.Classes
         {
         }
 
-        public Teacher(string fname, string lname, DateTime dateOfBirth):base(fname, lname, dateOfBirth)
+        public Teacher(string fname, string lname, string dateOfBirth):base(fname, lname, dateOfBirth)
         {
-            Firstname = fname;
-            Lastname = lname;
-            DateOfBirth = dateOfBirth;
+            //Firstname = fname;
+            //Lastname = lname;
+            //// adding time as string in this way "2/16/1987"
+            //DateOfBirth = DateTime.Parse(dateOfBirth);
         }
 
         public override string ToString()
         {
-            return "First Name : " + Firstname + " || Last Name : " + Lastname + "\nDate Of Birth : " + DateOfBirth + " || Student Id = " + TeacherId.ToString()+ "\n";
+            return "\nTeacher Info:\nTeacher Name: " + Firstname + " " + Lastname + "\nDate Of Birth: " + DateOfBirth +"\n";
         }
 
         public int GetAge()

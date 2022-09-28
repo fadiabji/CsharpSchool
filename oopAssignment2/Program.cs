@@ -1,10 +1,36 @@
-﻿
-using oopAssignment2.Classes;
+﻿using oopAssignment2.Classes;
+using System.Security.Cryptography.X509Certificates;
 using static System.Console;
 
 
-Grade g = new Grade();
+School lexicon = new()
+{
+    Name = "Lexicon",
+};
 
-g.GradeResult = Grade.GradeType.A;
-//enum grades { A, B, C, D, E, F } // ask about the how to emplement the enum inside the Grade class
-WriteLine("test"); // q about the top level statement doesn't work here => because of I include the enum here, I cannot add enum here 
+Teacher teacherObj1 = new() 
+{
+    Firstname = "Robert",
+    Lastname = "Larson",
+    DateOfBirth = DateTime.Parse("2/16/1981")
+};
+
+Teacher teacherObj2 = new()
+{
+    Firstname = "Fadi",
+    Lastname = "Larson",
+    DateOfBirth = DateTime.Parse("2/16/1987")
+};
+
+lexicon.TeachersList.Add(teacherObj1);
+lexicon.TeachersList.Add(teacherObj2);
+
+
+void displayingTeachers()
+{
+    foreach (Teacher t in lexicon.TeachersList)
+    {
+        Write(t.ToString());
+    }
+}
+displayingTeachers();

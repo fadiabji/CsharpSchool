@@ -10,8 +10,9 @@ namespace oopAssignment2.Classes
     internal class Teacher : Person
     {
         [Key]
-        public int TeacherId { get; set; }
-
+        [Required]
+        public Guid TeacherId { get; private set; } = Guid.NewGuid();
+       
         public Teacher() : base()
         {
         }
@@ -25,7 +26,7 @@ namespace oopAssignment2.Classes
 
         public override string ToString()
         {
-            return "First Name : " + Firstname + "|| Last Name : " + Lastname + "\nDate Of Birth : " + DateOfBirth + "|| Student Id: " + TeacherId.ToString();
+            return "First Name : " + Firstname + " || Last Name : " + Lastname + "\nDate Of Birth : " + DateOfBirth + " || Student Id = " + TeacherId.ToString()+ "\n";
         }
 
         public int GetAge()

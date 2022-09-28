@@ -11,7 +11,8 @@ namespace oopAssignment2.Classes
     internal class Student : Person
     {
         [Key]
-        public int StudentId { get; set; }
+        [Required]
+        public Guid StudentId { get; private set; } = Guid.NewGuid();
 
 
         public Student() :base()

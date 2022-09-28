@@ -1,6 +1,7 @@
 ﻿using oopAssignment2.Classes;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Dynamic;
 using System.Linq;
@@ -11,7 +12,9 @@ namespace oopAssignment2.Classes
 {
     internal class Grade
     {
-        public int GradeId { get; set; }
+        [Key]
+        [Required]
+        public Guid GradeId { get; private set; } = Guid.NewGuid();
         public Course Course { get; set; }
         public Student Student { get; set; }
         public DateTime DateAcquired { get; set; }

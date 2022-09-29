@@ -27,7 +27,7 @@ namespace oopAssignment2.Classes
 
         public override string ToString()
         {
-            return "\nTeacher Info:\nTeacher Name: " + Firstname + " " + Lastname + "\nDate Of Birth: " + DateOfBirth +"\n";
+            return "\nTeacher Info:\nTeacher Name: " + Firstname + " " + Lastname + "\nDate Of Birth: " + DateOfBirth + "id: "+ TeacherId.ToString()+"\n";
         }
 
         public int GetAge()

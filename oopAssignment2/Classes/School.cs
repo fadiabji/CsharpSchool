@@ -107,7 +107,7 @@ namespace oopAssignment2.Classes
 
         public void SetGrade(Grade grading, Guid courseId, Guid studentId)
         {
-                Grade targetStudentGrade = GradesList.First(g => g.GradeId == grading.GradeId);
+                var targetStudentGrade = GradesList.FirstOrDefault(g => g.GradeId == grading.GradeId);
                 if (targetStudentGrade != null)
                 {
                     targetStudentGrade.GradeResult = grading.GradeResult;
@@ -120,19 +120,27 @@ namespace oopAssignment2.Classes
                     Course = CoursesList.Find(c => c.CourseId == courseId),
                     GradeResult = grading.GradeResult
                 };
+                GradesList.Add(newGrade);
             }
         }
 
         public void RemoveGrade(Guid courseId, Guid studentId)
         {
-            Grade targetStudentGrade = GradesList.First(g => g.Course.CourseId == courseId && g.Student.StudentId == studentId);
+            Grade targetStudentGrade = GradesList.FirstOrDefault(g => g.Course.CourseId == courseId && g.Student.StudentId == studentId);
             GradesList.Remove(targetStudentGrade);
         }
 
-        public String GetGrades(Guid studentId)
+        public void GetGrades(Guid studentId)
         {
-            Grade targetStudentGrade = GradesList.First(g => g.Student.StudentId == studentId);
-            return targetStudentGrade.ToString();
+            Grade targetStudentGrade = GradesList.Find(g => g.Student.StudentId == studentId);
+            if (targetStudentGrade != null)
+            {
+                WriteLine(targetStudentGrade.ToString());
+            }
+            else
+            {
+                WriteLine("No Grades yet!");
+            }
         }
     }
 }

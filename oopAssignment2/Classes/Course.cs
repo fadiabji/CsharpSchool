@@ -33,7 +33,7 @@ namespace oopAssignment2.Classes
 
         public override string ToString()
         {
-            return "\nCourse Info:\nCoures title: " + Name + " || Responsple Teacher: " + Teacher.Firstname + " " + Teacher.Lastname +"\n";
+            return "\nCourse Info:\nCoures title: " + Name + " || Responsple Teacher: " + Teacher.Firstname + " " + Teacher.Lastname + "id: " + CourseId.ToString() + "\n";
         }
     }
 }

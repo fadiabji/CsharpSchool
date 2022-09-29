@@ -43,7 +43,7 @@ namespace oopAssignment2.Classes
                 case GradeType.F:
                     return $"Unfortunatly, you get F in  {Course.Name} you are not passing the exam.";
                 default:
-                    return "Wrong grade adding!";
+                    return "No grade avalibale for the Student!";
             }
         }
     }
